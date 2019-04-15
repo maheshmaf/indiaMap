@@ -1,0 +1,37 @@
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
+        <link rel="stylesheet" href="map.css">
+        <script src="jquery.vmap.js"></script>
+    <script src="jquery.vmap.india.js"></script>
+
+  
+  <script type="text/javascript">
+	jQuery(document).ready(function() {
+		jQuery('#vmap').vectorMap({
+        map: 'india_en',
+        backgroundColor: 'white',
+        borderColor: '#000000',
+        borderOpacity: 0.5,
+        borderWidth: 1.5,
+        color: '#f4f3f0',
+        enableZoom: false,
+        hoverColor: 'crimson',
+        showTooltip: true,
+        scaleColors: ['#C8EEFF', '#006491'],
+        normalizeFunction: 'polynomial',
+		    onRegionClick: function(element, code, region)
+		    {
+		        // var message = 'You clicked "'
+		        //     + region 
+		        //     + '" which has the code: '
+		        //     + code.toUpperCase();
+             
+                // alert(message);
+                window.open('https://www.getmyuni.com/all-colleges/'+code);
+		    }
+		});
+	});
+	</script>
+  </head>
+  <body>
+    <div id="vmap" style="width: 550px; height: 570px;"></div>
